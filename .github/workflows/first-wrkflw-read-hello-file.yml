@@ -1,0 +1,17 @@
+name: Read the hello.txt file on push to the main branch
+
+on:
+  push:
+    branches:
+      - main
+
+
+jobs:
+  read_hello_file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout codes
+        uses: actions/checkout@v3
+
+      - name: Read and Output the content of the hello.txt file
+        run: cat hello.txt
